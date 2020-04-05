@@ -1,15 +1,18 @@
-package com.example.bootdemo.lock;
+package com.example.bootdemo.common.lock;
 
-public class RushOrder {
+import java.util.concurrent.atomic.AtomicInteger;
 
-    int i  = 60000;//运行时在堆内存 只有堆内存中才是线程共享的
+public class RushOrderAtomic {
+
+    AtomicInteger i = new AtomicInteger(60000);
+   // int i  = 60000;//运行时在堆内存 只有堆内存中才是线程共享的
     public void order(){
         //业务操作
-        i--;
+        i.decrementAndGet();
     }
 
     public static void main(String[] args) throws InterruptedException {
-        RushOrder rushOrder = new RushOrder();
+        RushOrderAtomic rushOrder = new RushOrderAtomic();
         //6线程处理
         for (int j = 0;j<6;j++){
             new Thread(

@@ -1,4 +1,4 @@
-package com.example.bootdemo.lock;
+package com.example.bootdemo.common.lock;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;

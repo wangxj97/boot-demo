@@ -1,4 +1,4 @@
-package com.example.bootdemo;
+package com.example.bootdemo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
