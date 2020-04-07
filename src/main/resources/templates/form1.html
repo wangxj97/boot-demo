@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入vue -->
+    <script src="/js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet"
+          href="/css/element2.13.css">
+    <!--引入组件库-->
+    <script src="/js/element2.13.js"></script>
+    <title>Insert title here</title>
+</head>
+<body>
+
+<div id="app">
+
+
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <el-input v-model="input2" placeholder="请输入内容"></el-input>
+
+    <template>
+        <el-radio v-model="radio" label="1">备选项</el-radio>
+        <el-radio v-model="radio" label="2">备选项</el-radio>
+    </template>
+    <template>
+        <el-radio v-model="radio2" label="3">ces</el-radio>
+        <el-radio v-model="radio2" label="4">对方的</el-radio>
+    </template>
+    <template>
+        <!-- `checked` 为 true 或 false -->
+        <el-checkbox v-model="checked">备选项</el-checkbox>
+    </template>
+
+    <template>
+        <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
+    </template>
+    <template>
+        <el-select v-model="value" placeholder="请选择">
+            <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+        </el-select>
+    </template>
+    <template>
+        <el-select v-model="value2" placeholder="请选择2">
+            <el-option
+                    v-for="item in options2"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+        </el-select>
+    </template>
+
+
+</div>
+</body>
+<script>
+
+    new Vue({
+        el: '#app',
+        data () {
+            return {
+                radio: '1',
+                radio2: '4',
+                checked: true,
+                input: '123',
+                input2: '第三方',
+                num:1,
+                options: [{
+                    value: '选项1',
+                    label: '黄金糕'
+                }, {
+                    value: '选项2',
+                    label: '双皮奶'
+                }, {
+                    value: '选项3',
+                    label: '蚵仔煎'
+                }, {
+                    value: '选项4',
+                    label: '龙须面'
+                }, {
+                    value: '选项5',
+                    label: '北京烤鸭'
+                }],
+                value: '选项1',
+
+                options2: [{
+                    value: '选项1',
+                    label: '黄金糕75'
+                }, {
+                    value: '选项2',
+                    label: '双皮奶773'
+                }, {
+                    value: '选项3',
+                    label: '蚵373煎'
+                }, {
+                    value: '选项4',
+                    label: '龙须373面'
+                }, {
+                    value: '选项5',
+                    label: '北京737烤鸭'
+                }],
+                value2: '选项3',
+            };
+        },
+        methods: {
+            handleChange(value) {
+                console.log(value);
+            }
+        }
+    })
+
+</script>
+</html>

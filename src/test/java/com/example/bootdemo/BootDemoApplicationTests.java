@@ -1,8 +1,10 @@
 package com.example.bootdemo;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.example.bootdemo.mapper.StudentMapper;
+import com.example.bootdemo.mapper.Test1Mapper;
 import com.example.bootdemo.model.Student;
 import com.example.bootdemo.model.Test1;
 import org.junit.jupiter.api.Test;
@@ -81,10 +83,15 @@ class BootDemoApplicationTests {
 //        student.insert();
 
         //直接用对象操作反而还方便了,直接返回的是page对象 这个student对象的值也不影响查询
-        Page<Student> page = student.selectPage(new Page<>(0, 2), null);
-        System.out.println(page);
+//        Page<Student> page = student.selectPage(new Page<>(0, 2), null);
+//        System.out.println(page);
+//
+//        Test1 test1 = new Test1();
 
-        Test1 test1 = new Test1();
+        Page<Student> page1 = new Page<>(0, 2);
+        List<Student> ss = studentMapper.selectPage(page1, null);
+        System.out.println(ss);
+
 
 
     }
