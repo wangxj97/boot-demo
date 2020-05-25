@@ -15,123 +15,15 @@
 <body>
 
 <div id="app">
-    <template>
-        <section class="index">
-            <!-- 销售数据 -->
-            <el-row class="index__header" type="flex" justify="space-around">
-                <el-col :span="5" class="index__header__item picture-1">
-                    <el-row class="pb-10">
-                        <el-col class="pb-10">今日核销数量</el-col>
-                        <el-col>
-                            <span class="pr-20 f-32">{{ usedNum }}</span>
-                            <span>张</span>
-                        </el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="5" class="index__header__item picture-2">
-                    <el-row class="pb-10">
-                        <el-col class="pb-10">今日核销金额</el-col>
-                        <el-col>
-                            <span class="pr-20 f-32">{{ usedAmount }}</span>
-                            <span>元</span>
-                        </el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="5" class="index__header__item picture-3">
-                    <el-row class="pb-10">
-                        <el-col class="pb-10">今日售券数量</el-col>
-                        <el-col>
-                            <span class="pr-20 f-32">{{ buyNum }}</span>
-                            <span>张</span>
-                        </el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="5" class="index__header__item picture-4">
-                    <el-row class="pb-10">
-                        <el-col class="pb-10">今日新增用户</el-col>
-                        <el-col>
-                            <span class="pr-20 f-32">{{ newUsers }}</span>
-                            <span>人</span>
-                        </el-col>
-                    </el-row>
-                </el-col>
-            </el-row>
-            <!-- 图表 -->
-            <el-row class="index__chart">
-                <el-col :span="15" class="index__chart__left">
-                    <el-row class="index__chart__left__item">
-                        <el-col :span="24">
-                            <div id="myChart1" :style="{width: 'auto', height: '330px'}"></div>
-                        </el-col>
-                    </el-row>
-                    <el-row class="index__chart__left__item">
-                        <el-col :span="24">
-                            <div>
-                                <div id="myChart2" :style="{width: 'auto', height: '330px'}"></div>
-                            </div>
-                        </el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="8" class="index__chart__right-list">
-                    <el-row>
-                        <el-col :span="24">
-                            <h5 class="pb-10">平台用户实时情况</h5>
-                            <el-row class="p-10" v-for="(item, index) in messageList" :key="index">
-                                <el-col :span="24" v-if="item.type === 1">
-                                    <i class="el-icon-s-opportunity pr-10 c-B00000"></i>
-                                    <span>用户{{item.userPhone}}购买{{item.ticketName}}一张</span>
-                                </el-col>
-                                <el-col :span="24" v-if="item.type === 2">
-                                    <i class="el-icon-s-opportunity pr-10 c-B00000"></i>
-                                    <span>用户{{item.userPhone}}在{{item.usedEnterpriseName}}使用一张{{item.ticketName}}</span>
-                                </el-col>
-                            </el-row>
-                        </el-col>
-                    </el-row>
-                </el-col>
-            </el-row>
-        </section>
-    </template>
-
-
+    hello,这是首页,暂时没啥东西,就先这么放着吧
 
 </div>
 </body>
 <script>
-    new Vue({
-        el: '#app',
-        data () {
-            return {
-                orgOptions: {},
-                messageList: [],
-                usedNum: 0, // 今日核销数量
-                usedAmount: 0, // 今日核销金额
-                buyNum: 0, // 今日售券数量
-                newUsers: 0, // 新增用户
-                amount: [],
-                amountDate: [],
-                quantity: [],
-                quantityDate: []
-            };
-        },
-        methods: {
 
-        }
-    })
 </script>
 <style>
-    .picture-1 {
-        background-image: url('/images/Index/t-purple.png');
-    }
-    .picture-2 {
-        background-image: url('/images/Index/t-blue.png');
-    }
-    .picture-3 {
-        background-image: url('/images/Index/t-red.png');
-    }
-    .picture-4 {
-        background-image: url('/images/Index/t-green.png');
-    }
+
 
 </style>
 

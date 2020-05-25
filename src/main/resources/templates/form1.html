@@ -13,11 +13,12 @@
     <title>Insert title here</title>
 </head>
 <body>
-
+<!--<input th:text="${name}"/>-->
 <div id="app">
 
 
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
+
+    <el-input v-model="input" th:text="${name}" placeholder="请输入内容"></el-input>
     <el-input v-model="input2" placeholder="请输入内容"></el-input>
 
     <template>
@@ -69,7 +70,7 @@
                 radio: '1',
                 radio2: '4',
                 checked: true,
-                input: '123',
+                input: '11',
                 input2: '第三方',
                 num:1,
                 options: [{
@@ -112,6 +113,7 @@
         methods: {
             handleChange(value) {
                 console.log(value);
+                //this.input = res.input
             }
         }
     })

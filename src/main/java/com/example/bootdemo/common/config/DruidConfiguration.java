@@ -2,6 +2,7 @@ package com.example.bootdemo.common.config;
 
 import javax.sql.DataSource;
 
+import com.example.bootdemo.model.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -19,10 +20,10 @@ public class DruidConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(DruidConfiguration.class);
 
-//    @Bean(destroyMethod = "close", initMethod = "init")
-    @Bean
+
     @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource druidDataSource() {
+    @Bean(destroyMethod = "close", initMethod = "init")
+    public DruidDataSource druidDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         return druidDataSource;
     }

@@ -1,6 +1,8 @@
 package com.example.bootdemo.model;
 
+import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.activerecord.Model;
@@ -9,11 +11,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author wangxj
- * @since 2020-04-05
+ * @since 2020-04-22
  */
 @TableName("student")
 public class Student extends Model<Student> {
@@ -21,19 +23,20 @@ public class Student extends Model<Student> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
-    private String id;
+    private Integer id;
     private String name;
     private String sex;
     private String age;
     private String hoppy;
     private Date birthday;
 
+    private transient String username;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -85,12 +88,20 @@ public class Student extends Model<Student> {
     @Override
     public String toString() {
         return "Student{" +
-        ", id=" + id +
-        ", name=" + name +
-        ", sex=" + sex +
-        ", age=" + age +
-        ", hoppy=" + hoppy +
-        ", birthday=" + birthday +
-        "}";
+                ", id=" + id +
+                ", name=" + name +
+                ", sex=" + sex +
+                ", age=" + age +
+                ", hoppy=" + hoppy +
+                ", birthday=" + birthday +
+                "}";
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

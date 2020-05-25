@@ -1,6 +1,5 @@
 package com.example.bootdemo;
 
-import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -25,7 +24,7 @@ public class TestGen {
                 //生成路径(一般都是生成在此项目的src/main/java下面)
                 .setOutputDir("D:\\ideaworkspace\\boot-demo\\src\\main\\java")
                 .setFileOverride(true)//第二次生成会把第一次生成的覆盖掉
-                .setIdType(IdType.AUTO)//主键策略
+//                .setIdType(IdType.AUTO)//主键策略
                 .setServiceName("%sService")//生成的service接口名字首字母是否为I，这样设置就没有I
                 .setBaseResultMap(true)//生成resultMap
                 .setBaseColumnList(true);//在xml中生成基础列
@@ -48,12 +47,12 @@ public class TestGen {
         //4、包名策略配置
         PackageConfig packageConfig = new PackageConfig();
         packageConfig.setParent("com.example.bootdemo")//设置包名的parent
-                .setMapper("mapper")
+                .setMapper("mappers")
                 .setService("service")
                 .setServiceImpl("service.impl")
                 .setController("controller")
-                .setEntity("model")
-                .setXml("mapper.xml");//设置xml文件的目录 这样会放到java里面,所以注释
+                .setEntity("model");
+                //.setXml("mapper.xml");//设置xml文件的目录 这样会放到java里面,所以注释
         //5、整合配置
         AutoGenerator autoGenerator = new AutoGenerator();
         autoGenerator.setGlobalConfig(config)
